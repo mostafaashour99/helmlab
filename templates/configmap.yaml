@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: python-env-vars
 data:
-{{- with .Values.data }}
+{{- with .Values.configMap.data }}
     ENVIRONMENT: {{ .ENVIRONMENT }}
     HOST: {{ .HOST }}
     PORT: {{ .PORT }}
