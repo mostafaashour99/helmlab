@@ -33,6 +33,7 @@ configMap:
 
 
 Service:
+    name: python-service
     type: LoadBalancer 
     ports:
       port: 8000

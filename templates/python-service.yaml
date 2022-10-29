@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-service
+  name: {{ .Values.Service.name}}
   labels:
-    app: python-demo-app
+    app: {{ .Values.deploy.selector.matchLabels.app}}
 spec:
   type: {{ .Values.Service.type}}
   selector:
-    name: python-pod
-    app: python-demo-app
+    name: {{ .Values.deploy.selector.matchLabels.name}}
+    app: {{ .Values.deploy.selector.matchLabels.app}}
   ports:
   - port: {{ .Values.Service.ports.port}}
     targetPort: {{ .Values.Service.ports.targetPort}}
